@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CodeLens — Local AI Code Explainer</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><div class="brand"><b>&lt;/&gt;</b><div><strong>CodeLens</strong><small>Local AI Code Explainer</small></div></div><div class="status">● ON-DEVICE AI · QVAC 0.19.1</div></header>
+<main>
+<section class="hero"><small>PRIVATE DEVELOPER TOOL</small><h1>Understand your code.<br><em>Keep it on your machine.</em></h1><p>Paste code and get a beginner-friendly explanation using a local QVAC model — no cloud AI API key required.</p></section>
+<section class="grid">
+<div class="panel"><div class="head"><div><small>INPUT</small><h2>Your code</h2></div><select id="language"><option>C++</option><option>C</option><option>Python</option><option>Java</option><option>JavaScript</option><option>HTML/CSS</option><option>SQL</option></select></div>
+<textarea id="code" spellcheck="false">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n = 5;
+    int fact = 1;
+
+    for (int i = 1; i &lt;= n; i++) {
+        fact *= i;
+    }
+
+    cout &lt;&lt; "Factorial = " &lt;&lt; fact;
+    return 0;
+}</textarea>
+<div class="foot"><span id="count">0 characters</span><button id="go">✦ Explain Code</button></div></div>
+<div class="panel"><div class="head"><div><small>QVAC ANALYSIS</small><h2>AI explanation</h2></div><i>LOCAL</i></div>
+<div id="empty" class="empty"><strong>✦</strong><h3>Ready when you are</h3><p>Your code is analyzed locally. The first run may take longer while QVAC loads the model.</p></div>
+<div id="loading" class="empty hidden"><div class="spinner"></div><h3>Running local inference…</h3><p>QVAC is analyzing your code on this machine.</p></div>
+<div id="result" class="result hidden">
+<article><small>01 · OVERVIEW</small><p id="overview"></p></article>
+<article><small>02 · STEP BY STEP</small><p id="steps"></p></article>
+<article><small>03 · COMPLEXITY</small><p id="complexity"></p></article>
+<article><small>04 · IMPROVEMENTS</small><p id="improvements"></p></article>
+</div><div id="error" class="error hidden"></div>
+</div></section>
+<footer>Powered by <b>Tether QVAC</b> · loadModel() + completion() · inference stays on-device</footer>
+</main><script src="/app.js"></script>
+</body></html>

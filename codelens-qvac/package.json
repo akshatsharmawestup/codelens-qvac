@@ -1,0 +1,9 @@
+{
+  "name": "codelens-qvac",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local AI code explainer powered by Tether QVAC.",
+  "type": "module",
+  "scripts": {"start": "node server.js"},
+  "dependencies": {"@qvac/sdk": "0.19.1"}
+}
